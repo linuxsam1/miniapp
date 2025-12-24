@@ -12,7 +12,7 @@ progressBar.addEventListener('animationend', () => {
   menu.style.display = 'flex';
 });
 
-// Снег
+// Снег на фоне
 const canvas = document.getElementById('snow');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
