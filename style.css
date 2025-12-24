@@ -1,6 +1,84 @@
 body {
-  background: #f2f2f2;
+  margin: 0;
+  background: linear-gradient(#0b1d3a, #123);
+  color: white;
   font-family: Arial;
-  text-align: center;
-  padding: 40px;
+  overflow: hidden;
+}
+
+/* ГИРЛЯНДЫ */
+.garland {
+  height: 40px;
+  background: repeating-linear-gradient(
+    90deg,
+    red 0 10px,
+    yellow 10px 20px,
+    green 20px 30px,
+    blue 30px 40px
+  );
+  animation: blink 1s infinite alternate;
+}
+
+.top { position: fixed; top: 0; width: 100%; }
+.bottom { position: fixed; bottom: 0; width: 100%; }
+
+@keyframes blink {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.5); }
+}
+
+/* ЦЕНТР */
+.loader {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* БИЛЕТИК */
+.ticket {
+  font-size: 80px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ПРОГРЕСС БАР */
+.progress {
+  width: 200px;
+  height: 10px;
+  background: #444;
+  border-radius: 10px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.bar {
+  width: 0;
+  height: 100%;
+  background: #4caf50;
+  animation: load 3s forwards;
+}
+
+@keyframes load {
+  to { width: 100%; }
+}
+
+/* СНЕГ */
+.snow::before {
+  content: "❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄";
+  position: fixed;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  font-size: 24px;
+  animation: snow 5s linear infinite;
+}
+
+@keyframes snow {
+  to { transform: translateY(120vh); }
 }
