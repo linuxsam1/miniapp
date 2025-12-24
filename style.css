@@ -13,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-/* Заголовок TICKET */
+/* Заголовок TICKET на загрузке */
 .ticket-title {
   font-size: 48px;
   font-weight: bold;
@@ -56,9 +56,39 @@ body {
 /* Текст */
 .text { font-size: 14px; letter-spacing: 1px; opacity: 0.7; margin-bottom: 10px; }
 
-/* Главное меню (пока черный экран) */
-.menu { display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; background-color: black; }
+/* Главное меню */
+.menu { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+  height: 100%; 
+  background-color: black; 
+  gap: 30px;
+  padding-top: 50px;
+}
 
+/* Кнопки игр */
+.game-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.game-button .emoji {
+  font-size: 60px; /* размер эмодзи */
+  margin-bottom: 10px;
+}
+.game-button span:nth-child(2) {
+  font-size: 18px;
+  color: #6cf;
+  text-align: center;
+}
+.game-button:hover {
+  transform: scale(1.1);
+}
+  
 /* Снег */
 canvas#snow {
   position: fixed; 
