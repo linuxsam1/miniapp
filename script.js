@@ -2,24 +2,17 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-// ПРОГРЕСС БАР + ПЕРЕХОД В МЕНЮ
+// Прогресс бар + переход в главное меню
 const progressBar = document.querySelector('.progress-bar');
 const loader = document.getElementById('loader');
 const menu = document.getElementById('menu');
 
 progressBar.addEventListener('animationend', () => {
-  // Скрываем экран загрузки
   loader.style.display = 'none';
-  // Показываем главное меню
   menu.style.display = 'flex';
 });
 
-// КНОПКА "Играть"
-document.getElementById('playBtn').addEventListener('click', () => {
-  alert('Начинаем игру!'); // Здесь можно открыть реальный экран игры
-});
-
-// СНЕГ НА ЗАДНЕМ ФОНЕ
+// Снег
 const canvas = document.getElementById('snow');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -39,7 +32,7 @@ for (let i = 0; i < numFlakes; i++) {
 
 function drawSnow() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(255,255,255,0.3)";
+  ctx.fillStyle = "rgba(255,255,255,0.2)";
   ctx.beginPath();
   for (let i = 0; i < numFlakes; i++) {
     let f = flakes[i];
