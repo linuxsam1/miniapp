@@ -2,7 +2,7 @@
 
 body {
   background: #0b0e14;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -34,56 +34,72 @@ body {
   width: 0;
   background: linear-gradient(90deg, #6cf, #9af);
   border-radius: 12px;
-  animation: load 3s ease forwards;
+  animation: load 2s ease forwards;
 }
-@keyframes load {
-  to { width: 100%; }
-}
-.text {
-  color: #bbb;
-  font-size: 14px;
-  margin-top: 6px;
-  text-align: center;
-}
+@keyframes load { to { width: 100%; } }
+.text { color: #bbb; font-size: 14px; margin-top: 6px; text-align: center; }
 
 /* Главное меню */
 .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   width: 100%;
-  padding: 30px 10px;
+  padding: 20px 10px;
+  gap: 30px;
+  height: 100%;
+  position: relative;
 }
 
-/* Кнопки игр — широкие светящиеся */
-.game-button {
+/* Профиль */
+.profile-section {
   width: 90%;
   max-width: 400px;
-  padding: 20px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #6cf;
   background: rgba(46,166,255,0.1);
-  border: 2px solid rgba(46,166,255,0.4);
   border-radius: 16px;
+  padding: 20px;
+  color: #6cf;
   box-shadow: 0 0 15px rgba(46,166,255,0.5);
-  backdrop-filter: blur(6px);
+}
+.profile-section div { font-size: 18px; margin-bottom: 10px; }
+
+/* История игр */
+.history-section {
+  width: 90%;
+  max-width: 400px;
+  background: rgba(46,166,255,0.05);
+  border-radius: 16px;
+  padding: 15px;
+  color: #ccc;
+  box-shadow: 0 0 10px rgba(46,166,255,0.3);
+}
+.history-section h3 { margin-bottom: 10px; text-align: center; }
+.history-list { font-size: 16px; text-align: center; }
+
+/* Нижнее меню */
+.bottom-nav {
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.nav-button {
+  flex: 1;
+  margin: 0 5px;
+  background: rgba(46,166,255,0.1);
+  color: #6cf;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: 0.2s;
+  box-shadow: 0 0 10px rgba(46,166,255,0.4);
 }
-
-.game-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(46,204,255,0.8);
-  border: 2px solid rgba(46,204,255,0.8);
-}
-
-/* Снег */
-canvas#snow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+.nav-button:hover {
+  background: rgba(46,204,255,0.2);
+  box-shadow: 0 0 15px rgba(46,204,255,0.6);
 }
