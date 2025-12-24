@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Loading</title>
+  <title>Mini Games</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
@@ -12,13 +12,12 @@
   <!-- Лёгкий снег -->
   <canvas id="snow"></canvas>
 
-  <!-- Экран -->
+  <!-- Экран загрузки -->
   <div class="screen" id="screen">
 
     <!-- Заголовок TICKET -->
     <h1 class="ticket-title">TICKET</h1>
 
-    <!-- Экран загрузки -->
     <div class="loader" id="loader">
       <div class="progress">
         <div class="progress-bar"></div>
@@ -26,8 +25,22 @@
       <div class="text">Connecting...</div>
     </div>
 
-    <!-- Главное меню (черный экран) -->
-    <div class="menu" id="menu" style="display:none;"></div>
+    <!-- Главное меню -->
+    <div class="menu" id="menu" style="display:none;">
+      <div class="game-button">
+        <span class="emoji">💯</span>
+        <span>100x</span>
+      </div>
+      <div class="game-button">
+        <span class="emoji">🎯</span>
+        <span>Попади в мишень</span>
+      </div>
+      <div class="game-button">
+        <span class="emoji">🚀</span>
+        <span>Ракетка</span>
+      </div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
