@@ -8,52 +8,9 @@ body {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Гирлянда сверху */
-.garlands-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
-}
-.garlands-img {
-  width: 400px; /* растянута по ширине */
-  height: auto;
-  animation: swing 2s ease-in-out infinite alternate;
-  z-index: 2;
-}
-
-/* Тусклое мерцающее свечение вокруг гирлянды */
-.garlands-glow {
-  position: absolute;
-  width: 420px;
-  height: 80px;
-  top: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
-  z-index: 1;
-  animation: glow 2s infinite alternate;
-}
-
-/* Лёгкое покачивание гирлянд */
-@keyframes swing {
-  0% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
-}
-
-/* Свечение */
-@keyframes glow {
-  0% { transform: scale(0.95); opacity: 0.5; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(0.95); opacity: 0.5; }
+  flex-direction: column;
 }
 
 /* Экран */
@@ -62,7 +19,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 120px; /* чтобы не перекрывало гирлянду */
 }
 
 /* Загрузка */
@@ -88,7 +44,7 @@ body {
 /* Прогресс */
 .progress { 
   width: 220px; 
-  height: 12px; /* более толстая линия */
+  height: 12px; 
   background: rgba(255,255,255,0.1); 
   border-radius: 10px; 
   overflow: hidden; 
@@ -105,7 +61,7 @@ body {
 /* Текст */
 .text { font-size: 14px; letter-spacing: 1px; opacity: 0.7; margin-bottom: 10px; }
 
-/* Главное меню (пока черный экран) */
+/* Главное меню (черный экран) */
 .menu { display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; background-color: black; }
 
 /* Снег */
