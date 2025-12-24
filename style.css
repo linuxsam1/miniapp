@@ -1,13 +1,8 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background: #0b0e14;
-  font-family: Arial, sans-serif;
-  color: white;
+  font-family: 'Arial', sans-serif;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -16,13 +11,14 @@ body {
   align-items: center;
 }
 
-/* Заголовок на загрузке */
+/* Заголовок TICKET */
 .ticket-title {
   font-size: 48px;
   font-weight: bold;
   color: #6cf;
+  text-shadow: 0 0 15px #6cf;
   margin-bottom: 40px;
-  text-shadow: 0 0 10px #6cf;
+  text-align: center;
 }
 
 /* Прогресс */
@@ -31,72 +27,57 @@ body {
   height: 14px;
   background: rgba(255,255,255,0.2);
   border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 .progress-bar {
   height: 100%;
   width: 0;
   background: linear-gradient(90deg, #6cf, #9af);
+  border-radius: 12px;
   animation: load 3s ease forwards;
 }
 @keyframes load {
   to { width: 100%; }
 }
-
 .text {
+  color: #bbb;
   font-size: 14px;
-  margin-top: 8px;
-  opacity: 0.7;
+  margin-top: 6px;
+  text-align: center;
 }
 
 /* Главное меню */
 .menu {
-  width: 100%;
-  height: 100%;
-  background: #0b0e14;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.game-row {
-  display: flex;
-  justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  width: 100%;
+  padding: 30px 10px;
 }
 
-.game-card {
-  width: 140px;
-  height: 140px;
-  background: #1b1f29;
-  border: 2px solid #2ea6ff;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(46,166,255,0.4);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.game-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(46,166,255,0.6);
-}
-
-.game-icon {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.game-text {
-  font-size: 16px;
-  font-weight: bold;
+/* Кнопки игр — широкие светящиеся */
+.game-button {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #6cf;
+  background: rgba(46,166,255,0.1);
+  border: 2px solid rgba(46,166,255,0.4);
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(46,166,255,0.5);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.game-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(46,204,255,0.8);
+  border: 2px solid rgba(46,204,255,0.8);
 }
 
 /* Снег */
