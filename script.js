@@ -2,7 +2,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-// Прогресс бар → меню
+// Прогресс → меню
 const progressBar = document.querySelector('.progress-bar');
 const loader = document.getElementById('loader');
 const menu = document.getElementById('menu');
@@ -29,33 +29,29 @@ for (let i = 0; i < 80; i++) {
 }
 
 function drawSnow() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle = "rgba(255,255,255,0.25)";
   ctx.beginPath();
-  flakes.forEach(f => {
-    ctx.moveTo(f.x, f.y);
-    ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);
+  flakes.forEach(f=>{
+    ctx.moveTo(f.x,f.y);
+    ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
   });
   ctx.fill();
   moveSnow();
 }
 
-let angle = 0;
-function moveSnow() {
-  angle += 0.01;
-  flakes.forEach(f => {
-    f.y += Math.cos(angle + f.d) + 1 + f.r/2;
-    f.x += Math.sin(angle) * 2;
-    if(f.y > canvas.height) {
-      f.y = -5;
-      f.x = Math.random() * canvas.width;
-    }
+let angle=0;
+function moveSnow(){
+  angle+=0.01;
+  flakes.forEach(f=>{
+    f.y += Math.cos(angle+f.d)+1+f.r/2;
+    f.x += Math.sin(angle)*2;
+    if(f.y>canvas.height){f.y=-5; f.x=Math.random()*canvas.width;}
   });
 }
+setInterval(drawSnow,30);
 
-setInterval(drawSnow, 30);
-
-// Привязка действий к кнопкам
-document.getElementById("game1").onclick = () => alert("Запустить 100x!");
-document.getElementById("game2").onclick = () => alert("Запустить Попади в мишень!");
-document.getElementById("game3").onclick = () => alert("Запустить Ракетка!");
+// Навигация по нижним кнопкам
+document.getElementById('nav-profile').onclick = () => alert('Профиль');
+document.getElementById('nav-minigames').onclick = () => alert('Мини-игры');
+document.getElementById('nav-inventory').onclick = () => alert('Инвентарь');
