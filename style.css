@@ -8,17 +8,38 @@ body {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
 
-/* Гирлянды сверху */
+/* Гирлянда сверху */
+.garlands-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 .garlands-img {
-  width: 300px;        /* можно изменить размер */
+  width: 400px; /* растянута по ширине */
   height: auto;
-  margin-bottom: 20px;
   animation: swing 2s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+/* Тусклое мерцающее свечение вокруг гирлянды */
+.garlands-glow {
+  position: absolute;
+  width: 420px;
+  height: 80px;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+  z-index: 1;
+  animation: glow 2s infinite alternate;
 }
 
 /* Лёгкое покачивание гирлянд */
@@ -28,49 +49,34 @@ body {
   100% { transform: rotate(-5deg); }
 }
 
+/* Свечение */
+@keyframes glow {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+
 /* Экран */
 .screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 120px; /* чтобы не перекрывало гирлянду */
 }
 
 /* Загрузка */
 .loader { display: flex; flex-direction: column; align-items: center; }
 
-/* Билет с тусклым свечением */
+/* Билет с подпрыгиванием */
 .ticket-container {
   position: relative;
   margin-bottom: 40px;
 }
 .ticket-img {
-  width: 150px;       /* размер билета */
+  width: 150px; 
   height: auto;
   animation: bounce 1.5s infinite;
-  position: relative;
-  z-index: 1;
-}
-
-/* Мерцающее свечение */
-.ticket-container::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
-  animation: glow 2s infinite alternate;
-  z-index: 0;
-}
-
-/* Анимация свечения */
-@keyframes glow {
-  0% { transform: scale(0.95); opacity: 0.5; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(0.95); opacity: 0.5; }
 }
 
 /* Анимация подпрыгивания */
