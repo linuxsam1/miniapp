@@ -2,15 +2,30 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Моё мини-приложение</title>
+  <title>Загрузка</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Привет 👋</h1>
-  <p>Это моё первое мини-приложение</p>
+  <!-- СНЕГ -->
+  <div class="snow"></div>
+
+  <!-- ГИРЛЯНДА СВЕРХУ -->
+  <div class="garland top"></div>
+
+  <!-- ОСНОВНОЙ ЭКРАН -->
+  <div class="loader">
+    <div class="ticket">🎟</div>
+    <div class="progress">
+      <div class="bar"></div>
+    </div>
+    <p>Загружаем праздник...</p>
+  </div>
+
+  <!-- ГИРЛЯНДА СНИЗУ -->
+  <div class="garland bottom"></div>
 
   <script src="script.js"></script>
 </body>
