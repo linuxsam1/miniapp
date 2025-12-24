@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -8,9 +6,26 @@ body {
   font-family: Arial, sans-serif;
   color: #aaa;
   height: 100vh;
+  overflow: hidden;
 }
 
-/* ЦЕНТР */
+/* ГИРЛЯНДЫ */
+.garland {
+  height: 40px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ff4b4b 0 12px,
+    #ffd93d 12px 24px,
+    #4bf5ff 24px 36px,
+    #7dff4b 36px 48px
+  );
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.top { position: fixed; top: 0; width: 100%; }
+.bottom { position: fixed; bottom: 0; width: 100%; }
+
+/* ЭКРАН */
 .screen {
   height: 100vh;
   display: flex;
@@ -18,6 +33,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* ЗАГРУЗКА */
+.loader { display: flex; flex-direction: column; align-items: center; }
 
 /* БИЛЕТ */
 .ticket {
@@ -29,62 +47,41 @@ body {
   margin-bottom: 40px;
   position: relative;
 }
-
-.ticket::before,
-.ticket::after {
+.ticket::before, .ticket::after {
   content: "";
   position: absolute;
   top: 50%;
-  width: 12px;
-  height: 12px;
-  background: #0b0e14;
-  border-radius: 50%;
+  width: 12px; height: 12px;
+  background: #0b0e14; border-radius: 50%;
   transform: translateY(-50%);
 }
-
 .ticket::before { left: -6px; }
 .ticket::after { right: -6px; }
-
 .ticket-inner {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   border: 1px dashed rgba(255,255,255,0.15);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
-
-.ticket span {
-  font-size: 28px;
-  opacity: 0.9;
-}
+.ticket span { font-size: 28px; opacity: 0.9; }
 
 /* ПРОГРЕСС */
-.progress {
-  width: 220px;
-  height: 6px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #6cf, #9af);
-  animation: load 2.5s ease forwards;
-}
+.progress { width: 220px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 14px;}
+.progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #6cf, #9af); animation: load 3s ease forwards; }
+@keyframes load { to { width: 100%; } }
 
 /* ТЕКСТ */
-.text {
-  margin-top: 14px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  opacity: 0.7;
-}
+.text { font-size: 13px; letter-spacing: 1px; opacity: 0.7; margin-bottom: 10px; }
 
-/* АНИМАЦИЯ */
-@keyframes load {
-  to { width: 100%; }
+/* ГЛАВНОЕ МЕНЮ */
+.menu { display: flex; flex-direction: column; align-items: center; animation: fadeIn 1s ease forwards;}
+.menu h2 { margin-bottom: 20px; color: #fff; }
+.menu button { padding: 12px 25px; border: none; border-radius: 8px; background: #2ea6ff; color: white; font-size: 16px; cursor: pointer; box-shadow: 0 0 15px rgba(46,166,255,0.5);}
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+/* CANVAS СНЕГА */
+canvas#snow {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 0;
 }
