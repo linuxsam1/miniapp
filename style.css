@@ -21,37 +21,20 @@ body {
   color: #6cf;
   text-align: center;
   text-shadow: 0 0 10px #6cf, 0 0 20px #9af;
-  margin-bottom: 60px; /* отступ до билета */
+  margin-bottom: 60px;
 }
 
 /* Экран */
 .screen {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* чтобы текст был сверху */
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 50px; /* смещение всей загрузки чуть ниже */
+  margin-top: 50px;
 }
 
 /* Загрузка */
 .loader { display: flex; flex-direction: column; align-items: center; }
-
-/* Билет с подпрыгиванием */
-.ticket-container {
-  position: relative;
-  margin-bottom: 30px;
-}
-.ticket-img {
-  width: 150px; 
-  height: auto;
-  animation: bounce 1.5s infinite;
-}
-
-/* Анимация подпрыгивания */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
 
 /* Прогресс */
 .progress { 
