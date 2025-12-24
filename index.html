@@ -9,18 +9,21 @@
 </head>
 <body>
 
-  <!-- ЛЁГКИЙ СНЕГ -->
+  <!-- Лёгкий снег -->
   <canvas id="snow"></canvas>
 
-  <!-- ГИРЛЯНДА СВЕРХУ -->
-  <div class="garland top"></div>
-
-  <!-- ЭКРАН -->
+  <!-- Экран -->
   <div class="screen" id="screen">
-    <!-- ЭКРАН ЗАГРУЗКИ -->
+    <!-- Экран загрузки -->
     <div class="loader" id="loader">
       <div class="ticket">
-        <div class="ticket-inner"><span>🎟</span></div>
+        <div class="ticket-inner">
+          <!-- Новый минималистичный билетик -->
+          <svg width="50" height="50" viewBox="0 0 64 64">
+            <rect x="2" y="12" width="60" height="40" rx="8" ry="8" fill="#2ea6ff"/>
+            <line x1="2" y1="32" x2="62" y2="32" stroke="#ffffff50" stroke-width="2"/>
+          </svg>
+        </div>
       </div>
       <div class="progress">
         <div class="progress-bar"></div>
@@ -28,15 +31,9 @@
       <div class="text">Connecting...</div>
     </div>
 
-    <!-- ГЛАВНОЕ МЕНЮ -->
-    <div class="menu" id="menu" style="display:none;">
-      <h2>Добро пожаловать!</h2>
-      <button id="playBtn">Играть</button>
-    </div>
+    <!-- Главное меню -->
+    <div class="menu" id="menu" style="display:none;"></div>
   </div>
-
-  <!-- ГИРЛЯНДА СНИЗУ -->
-  <div class="garland bottom"></div>
 
   <script src="script.js"></script>
 </body>
