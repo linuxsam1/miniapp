@@ -9,19 +9,34 @@
 </head>
 <body>
 
-  <div class="screen">
-    <div class="ticket">
-      <div class="ticket-inner">
-        <span>🎟</span>
+  <!-- ЛЁГКИЙ СНЕГ -->
+  <canvas id="snow"></canvas>
+
+  <!-- ГИРЛЯНДА СВЕРХУ -->
+  <div class="garland top"></div>
+
+  <!-- ЭКРАН -->
+  <div class="screen" id="screen">
+    <!-- ЭКРАН ЗАГРУЗКИ -->
+    <div class="loader" id="loader">
+      <div class="ticket">
+        <div class="ticket-inner"><span>🎟</span></div>
       </div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="text">Connecting...</div>
     </div>
 
-    <div class="progress">
-      <div class="progress-bar"></div>
+    <!-- ГЛАВНОЕ МЕНЮ -->
+    <div class="menu" id="menu" style="display:none;">
+      <h2>Добро пожаловать!</h2>
+      <button id="playBtn">Играть</button>
     </div>
-
-    <div class="text">Connecting...</div>
   </div>
+
+  <!-- ГИРЛЯНДА СНИЗУ -->
+  <div class="garland bottom"></div>
 
   <script src="script.js"></script>
 </body>
