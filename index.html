@@ -2,23 +2,22 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Mini Games</title>
+  <title>Mini Games Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Лёгкий снег -->
+  <!-- Снег -->
   <canvas id="snow"></canvas>
 
-  <!-- Экран загрузки -->
-  <div class="screen" id="screen">
+  <div class="screen">
 
-    <!-- Заголовок TICKET -->
-    <h1 class="ticket-title">TICKET</h1>
+    <!-- Загрузка -->
+    <div id="loader" class="loader">
+      <h1 class="ticket-title">TICKET</h1>
 
-    <div class="loader" id="loader">
       <div class="progress">
         <div class="progress-bar"></div>
       </div>
@@ -26,19 +25,27 @@
     </div>
 
     <!-- Главное меню -->
-    <div class="menu" id="menu" style="display:none;">
-      <div class="game-button">
-        <span class="emoji">💯</span>
-        <span>100x</span>
+    <div id="menu" class="menu" style="display:none;">
+
+      <div class="game-row">
+        <div class="game-card" id="game1">
+          <div class="game-icon">💯</div>
+          <div class="game-text">100x</div>
+        </div>
+
+        <div class="game-card" id="game2">
+          <div class="game-icon">🎯</div>
+          <div class="game-text">Попади в мишень</div>
+        </div>
       </div>
-      <div class="game-button">
-        <span class="emoji">🎯</span>
-        <span>Попади в мишень</span>
+
+      <div class="game-row">
+        <div class="game-card" id="game3">
+          <div class="game-icon">🚀</div>
+          <div class="game-text">Ракетка</div>
+        </div>
       </div>
-      <div class="game-button">
-        <span class="emoji">🚀</span>
-        <span>Ракетка</span>
-      </div>
+
     </div>
 
   </div>
