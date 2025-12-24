@@ -16,22 +16,27 @@
   <div class="screen" id="screen">
     <!-- Экран загрузки -->
     <div class="loader" id="loader">
-      <div class="ticket">
-        <div class="ticket-inner">
-          <!-- Новый минималистичный билетик -->
-          <svg width="50" height="50" viewBox="0 0 64 64">
-            <rect x="2" y="12" width="60" height="40" rx="8" ry="8" fill="#2ea6ff"/>
-            <line x1="2" y1="32" x2="62" y2="32" stroke="#ffffff50" stroke-width="2"/>
-          </svg>
+      <div class="ticket-character">
+        <!-- Мультяшный билет с руками и ногами -->
+        <div class="ticket-body">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="mouth"></div>
         </div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="leg left"></div>
+        <div class="leg right"></div>
       </div>
+
       <div class="progress">
         <div class="progress-bar"></div>
       </div>
+
       <div class="text">Connecting...</div>
     </div>
 
-    <!-- Главное меню -->
+    <!-- Главное меню (черный экран) -->
     <div class="menu" id="menu" style="display:none;"></div>
   </div>
 
