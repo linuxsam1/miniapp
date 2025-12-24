@@ -7,11 +7,29 @@ body {
   color: #aaa;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Гирлянды сверху */
+.garlands-img {
+  width: 300px;        /* можно изменить размер */
+  height: auto;
+  margin-bottom: 20px;
+  animation: swing 2s ease-in-out infinite alternate;
+}
+
+/* Лёгкое покачивание гирлянд */
+@keyframes swing {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
 }
 
 /* Экран */
 .screen {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,12 +39,38 @@ body {
 /* Загрузка */
 .loader { display: flex; flex-direction: column; align-items: center; }
 
-/* Билет */
-.ticket-img {
-  width: 100px;       /* размер билета */
-  height: auto;
+/* Билет с тусклым свечением */
+.ticket-container {
+  position: relative;
   margin-bottom: 40px;
+}
+.ticket-img {
+  width: 150px;       /* размер билета */
+  height: auto;
   animation: bounce 1.5s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+/* Мерцающее свечение */
+.ticket-container::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+  animation: glow 2s infinite alternate;
+  z-index: 0;
+}
+
+/* Анимация свечения */
+@keyframes glow {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 0.5; }
 }
 
 /* Анимация подпрыгивания */
@@ -38,7 +82,7 @@ body {
 /* Прогресс */
 .progress { 
   width: 220px; 
-  height: 6px; 
+  height: 12px; /* более толстая линия */
   background: rgba(255,255,255,0.1); 
   border-radius: 10px; 
   overflow: hidden; 
@@ -53,7 +97,7 @@ body {
 @keyframes load { to { width: 100%; } }
 
 /* Текст */
-.text { font-size: 13px; letter-spacing: 1px; opacity: 0.7; margin-bottom: 10px; }
+.text { font-size: 14px; letter-spacing: 1px; opacity: 0.7; margin-bottom: 10px; }
 
 /* Главное меню (пока черный экран) */
 .menu { display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%; background-color: black; }
