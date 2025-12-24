@@ -6,9 +6,11 @@ tg.expand();
 const progressBar = document.querySelector('.progress-bar');
 const loader = document.getElementById('loader');
 const menu = document.getElementById('menu');
+const ticketTitle = document.querySelector('.ticket-title');
 
 progressBar.addEventListener('animationend', () => {
   loader.style.display = 'none';
+  ticketTitle.style.display = 'none'; // убираем TICKET после загрузки
   menu.style.display = 'flex';
 });
 
